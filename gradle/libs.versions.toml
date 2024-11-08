@@ -1,0 +1,5 @@
+[versions]
+agp = "8.8.0-alpha09" # set agp version with Android Studio latest version compatible support
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
