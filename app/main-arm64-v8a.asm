@@ -105,7 +105,7 @@ onSaveInstanceState:
     mov         w0, 4
     str         w0, [x1]
     bl          malloc
-    mov         x19, x0
+    mov         x18, x0
 
     cbz         w0, error
 
@@ -116,7 +116,7 @@ onSaveInstanceState:
     add         x2, x2, :lo12:SaveInstanceStatet
     bl          __android_log_print
 
-    mov         x0, x19
+    mov         x0, x18
 
     ldp         x29, x30, [sp], 16
 
