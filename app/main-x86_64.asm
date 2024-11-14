@@ -1,6 +1,6 @@
 .include "main.inc"
 
-.section .text
+.section    .text
     .global ANativeActivity_onCreate
 
 ANativeActivity_onCreate:
