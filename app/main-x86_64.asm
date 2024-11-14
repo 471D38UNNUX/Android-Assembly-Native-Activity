@@ -1,7 +1,8 @@
 .include "main.inc"
 
+.global ANativeActivity_onCreate
+
 .section    .text
-    .global ANativeActivity_onCreate
 
 ANativeActivity_onCreate:
     sub         $8, %spl
