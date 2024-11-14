@@ -1,8 +1,6 @@
-.extern __android_log_print, malloc
+.section    .note.GNU-stack,"",@progbits
 
-.section .note.GNU-stack,"",@progbits
-
-.section .data
+.section    .data
 LOG_TAG:
 	.asciz "AssemblyNativeActivity"
 .equ ANDROID_LOG_INFO, 4
