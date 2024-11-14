@@ -1,7 +1,8 @@
 .include "main.inc"
 
-.section .text
-    .global ANativeActivity_onCreate
+.global ANativeActivity_onCreate
+
+.section    .text
 
 ANativeActivity_onCreate:
     stp         x29, x30, [sp, -16]!
