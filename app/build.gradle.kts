@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "com.assemblynativeactivity"
-    compileSdk = 35
+    compileSdkPreview = "Baklava"
 
     defaultConfig {
         applicationId = "com.assemblynativeactivity"
@@ -33,6 +33,6 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-    buildToolsVersion = "35.0.0"
-    ndkVersion = "28.0.12433566 rc1"
+    buildToolsVersion = "36.0.0 rc1"
+    ndkVersion = "28.0.12674087 rc2"
 }
