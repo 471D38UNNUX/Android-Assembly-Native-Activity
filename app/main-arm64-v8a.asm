@@ -5,8 +5,7 @@
 .section    .text
 
 ANativeActivity_onCreate:
-    stp         x29, x30, [sp, -16]!
-    mov         x29, sp
+    str         lr, [sp, -16]!
 
     ldr         x0, [x0]
     adrp        x3, onStart
@@ -65,13 +64,12 @@ ANativeActivity_onCreate:
     add         x2, x2, :lo12:Createt
     bl          __android_log_print
 
-    ldp         x29, x30, [sp], 16
+    ldr         lr, [sp], 16
 
     ret
 
 onStart:
-    stp         x29, x30, [sp, -16]!
-    mov         x29, sp
+    str         lr, [sp, -16]!
 
     ldr         w0, =ANDROID_LOG_INFO
     adrp        x1, LOG_TAG
@@ -80,13 +78,12 @@ onStart:
     add         x2, x2, :lo12:Startt
     bl          __android_log_print
 
-    ldp         x29, x30, [sp], 16
+    ldr         lr, [sp], 16
 
     ret
 
 onResume:
-    stp         x29, x30, [sp, -16]!
-    mov         x29, sp
+    str         lr, [sp, -16]!
 
     ldr         w0, =ANDROID_LOG_INFO
     adrp        x1, LOG_TAG
@@ -95,13 +92,12 @@ onResume:
     add         x2, x2, :lo12:Resumet
     bl          __android_log_print
 
-    ldp         x29, x30, [sp], 16
+    ldr         lr, [sp], 16
 
     ret
 
 onSaveInstanceState:
-    stp         x29, x30, [sp, -16]!
-    mov         x29, sp
+    str         lr, [sp, -16]!
 
     mov         w0, 4
     str         w0, [x1]
@@ -119,19 +115,18 @@ onSaveInstanceState:
 
     mov         x0, x18
 
-    ldp         x29, x30, [sp], 16
+    ldr         lr, [sp], 16
 
     ret
 error:
     mov         x0, 1
 
-    ldp         x29, x30, [sp], 16
+    ldr         lr, [sp], 16
 
     ret
 
 onPause:
-    stp         x29, x30, [sp, -16]!
-    mov         x29, sp
+    str         lr, [sp, -16]!
 
     ldr         w0, =ANDROID_LOG_INFO
     adrp        x1, LOG_TAG
@@ -140,13 +135,12 @@ onPause:
     add         x2, x2, :lo12:Pauset
     bl          __android_log_print
 
-    ldp         x29, x30, [sp], 16
+    ldr         lr, [sp], 16
 
     ret
 
 onStop:
-    stp         x29, x30, [sp, -16]!
-    mov         x29, sp
+    str         lr, [sp, -16]!
 
     ldr         w0, =ANDROID_LOG_INFO
     adrp        x1, LOG_TAG
@@ -155,13 +149,12 @@ onStop:
     add         x2, x2, :lo12:Stopt
     bl          __android_log_print
 
-    ldp         x29, x30, [sp], 16
+    ldr         lr, [sp], 16
 
     ret
 
 onDestroy:
-    stp         x29, x30, [sp, -16]!
-    mov         x29, sp
+    str         lr, [sp, -16]!
 
     ldr         w0, =ANDROID_LOG_INFO
     adrp        x1, LOG_TAG
@@ -170,13 +163,12 @@ onDestroy:
     add         x2, x2, :lo12:Destroyt
     bl          __android_log_print
 
-    ldp         x29, x30, [sp], 16
+    ldr         lr, [sp], 16
 
     ret
 
 onWindowFocusChanged:
-    stp         x29, x30, [sp, -16]!
-    mov         x29, sp
+    str         lr, [sp, -16]!
 
     ldr         w0, =ANDROID_LOG_INFO
     adrp        x1, LOG_TAG
@@ -185,13 +177,12 @@ onWindowFocusChanged:
     add         x2, x2, :lo12:WindowFocusChangedt
     bl          __android_log_print
 
-    ldp         x29, x30, [sp], 16
+    ldr         lr, [sp], 16
 
     ret
 
 onNativeWindowCreated:
-    stp         x29, x30, [sp, -16]!
-    mov         x29, sp
+    str         lr, [sp, -16]!
 
     ldr         w0, =ANDROID_LOG_INFO
     adrp        x1, LOG_TAG
@@ -200,13 +191,12 @@ onNativeWindowCreated:
     add         x2, x2, :lo12:NativeWindowCreatedt
     bl          __android_log_print
 
-    ldp         x29, x30, [sp], 16
+    ldr         lr, [sp], 16
 
     ret
 
 onNativeWindowResized:
-    stp         x29, x30, [sp, -16]!
-    mov         x29, sp
+    str         lr, [sp, -16]!
 
     ldr         w0, =ANDROID_LOG_INFO
     adrp        x1, LOG_TAG
@@ -215,13 +205,12 @@ onNativeWindowResized:
     add         x2, x2, :lo12:NativeWindowResizedt
     bl          __android_log_print
 
-    ldp         x29, x30, [sp], 16
+    ldr         lr, [sp], 16
 
     ret
 
 onNativeWindowRedrawNeeded:
-    stp         x29, x30, [sp, -16]!
-    mov         x29, sp
+    str         lr, [sp, -16]!
 
     ldr         w0, =ANDROID_LOG_INFO
     adrp        x1, LOG_TAG
@@ -230,13 +219,12 @@ onNativeWindowRedrawNeeded:
     add         x2, x2, :lo12:NativeWindowRedrawNeededt
     bl          __android_log_print
 
-    ldp         x29, x30, [sp], 16
+    ldr         lr, [sp], 16
 
     ret
 
 onNativeWindowDestroyed:
-    stp         x29, x30, [sp, -16]!
-    mov         x29, sp
+    str         lr, [sp, -16]!
 
     ldr         w0, =ANDROID_LOG_INFO
     adrp        x1, LOG_TAG
@@ -245,13 +233,12 @@ onNativeWindowDestroyed:
     add         x2, x2, :lo12:NativeWindowDestroyedt
     bl          __android_log_print
 
-    ldp         x29, x30, [sp], 16
+    ldr         lr, [sp], 16
 
     ret
 
 onInputQueueCreated:
-    stp         x29, x30, [sp, -16]!
-    mov         x29, sp
+    str         lr, [sp, -16]!
 
     ldr         w0, =ANDROID_LOG_INFO
     adrp        x1, LOG_TAG
@@ -260,13 +247,12 @@ onInputQueueCreated:
     add         x2, x2, :lo12:InputQueueCreatedt
     bl          __android_log_print
 
-    ldp         x29, x30, [sp], 16
+    ldr         lr, [sp], 16
 
     ret
 
 onInputQueueDestroyed:
-    stp         x29, x30, [sp, -16]!
-    mov         x29, sp
+    str         lr, [sp, -16]!
 
     ldr         w0, =ANDROID_LOG_INFO
     adrp        x1, LOG_TAG
@@ -275,13 +261,12 @@ onInputQueueDestroyed:
     add         x2, x2, :lo12:InputQueueDestroyedt
     bl          __android_log_print
 
-    ldp         x29, x30, [sp], 16
+    ldr         lr, [sp], 16
 
     ret
 
 onContentRectChanged:
-    stp         x29, x30, [sp, -16]!
-    mov         x29, sp
+    str         lr, [sp, -16]!
 
     ldr         w0, =ANDROID_LOG_INFO
     adrp        x1, LOG_TAG
@@ -290,13 +275,12 @@ onContentRectChanged:
     add         x2, x2, :lo12:ContentRectChangedt
     bl          __android_log_print
 
-    ldp         x29, x30, [sp], 16
+    ldr         lr, [sp], 16
 
     ret
 
 onConfigurationChanged:
-    stp         x29, x30, [sp, -16]!
-    mov         x29, sp
+    str         lr, [sp, -16]!
 
     ldr         w0, =ANDROID_LOG_INFO
     adrp        x1, LOG_TAG
@@ -305,13 +289,12 @@ onConfigurationChanged:
     add         x2, x2, :lo12:ConfigurationChangedt
     bl          __android_log_print
 
-    ldp         x29, x30, [sp], 16
+    ldr         lr, [sp], 16
 
     ret
 
 onLowMemory:
-    stp         x29, x30, [sp, -16]!
-    mov         x29, sp
+    str         lr, [sp, -16]!
 
     ldr         w0, =ANDROID_LOG_INFO
     adrp        x1, LOG_TAG
@@ -320,6 +303,6 @@ onLowMemory:
     add         x2, x2, :lo12:LowMemoryt
     bl          __android_log_print
 
-    ldp         x29, x30, [sp], 16
+    ldr         lr, [sp], 16
 
     ret

@@ -26,13 +26,13 @@ android {
     externalNativeBuild {
         cmake {
             path = file("CMakeLists.txt")
-            version = "3.31.0"
+            version = "3.31.1"
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_23
+        targetCompatibility = JavaVersion.VERSION_23
     }
-    buildToolsVersion = "36.0.0 rc1"
+    buildToolsVersion = "36.0.0 rc3"
     ndkVersion = "28.0.12674087 rc2"
 }
